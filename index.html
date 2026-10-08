@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>October Rose · 3Zero Campus INTeK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff7f9;--surface:#ffffff;--ink:#1c2a24;--muted:#52635b;--rose:#c2185b;--rose-soft:#fbd9e5;--green:#1e5a43;--leaf:#8cc98f;--line:#ecd3dc;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14201b;--surface:#1c2c25;--ink:#f6ece f0;--ink:#f6edf0;--muted:#b5c7be;--rose:#ff7eb0;--rose-soft:#3a2230;--green:#9bdca0;--leaf:#3f8a5c;--line:#2f4339}}
+:root[data-theme="dark"]{--bg:#14201b;--surface:#1c2c25;--ink:#f6edf0;--muted:#b5c7be;--rose:#ff7eb0;--rose-soft:#3a2230;--green:#9bdca0;--leaf:#3f8a5c;--line:#2f4339}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.12;margin:0 0 .5em;font-weight:700}
+h1{font-size:clamp(2.4rem,7vw,4.6rem)}h2{font-size:clamp(1.7rem,4vw,2.5rem)}h3{font-size:1.25rem}
+p{max-width:62ch;margin:0 0 1em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:2px solid var(--rose);padding-top:env(safe-area-inset-top,0px)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 1.25rem;max-width:1040px;margin:0 auto;flex-wrap:wrap}
+.brand{font-family:Fraunces,serif;font-weight:700;font-size:1.2rem;text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.brand b{color:var(--green)}.brand i{font-style:normal;color:var(--rose)}
+nav{display:flex;gap:.25rem;flex-wrap:wrap}
+nav a{text-decoration:none;padding:.4rem .8rem;border-radius:99px;font-weight:500;font-size:.95rem}
+nav a[aria-current="page"]{background:var(--rose);color:#fff}
+nav a:not([aria-current]):hover{background:var(--rose-soft)}
+.view{display:none;padding:3rem 0 4rem}.view.on{display:block}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:2rem;align-items:center}
+.hero h1 em{font-style:normal;color:var(--rose)}
+.hero svg{width:100%;max-width:340px;justify-self:center}
+.btn{display:inline-block;background:var(--rose);color:#fff;border:0;padding:.8rem 1.4rem;border-radius:99px;font:700 1rem Figtree,sans-serif;text-decoration:none;cursor:pointer}
+.btn.alt{background:transparent;color:var(--green);border:2px solid var(--green);margin-left:.5rem}
+.band{background:var(--green);color:#fff;padding:2.2rem 0;margin-top:3rem}
+:root[data-theme="dark"] .band{color:#14201b}
+.band p{font-family:Fraunces,serif;font-size:clamp(1.25rem,3vw,1.8rem);max-width:30em;margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-top:1.5rem}
+.card{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--rose);border-radius:4px 18px 4px 18px;padding:1.3rem}
+.card.g{border-left-color:var(--green)}
+.lead{color:var(--muted);font-size:1.2rem}
+.steps{list-style:none;padding:0;margin:1.5rem 0;display:grid;gap:1rem}
+.steps li{display:grid;grid-template-columns:3rem 1fr;gap:1rem;background:var(--surface);border:1px solid var(--line);padding:1rem 1.2rem;border-radius:14px}
+.steps .n{font:700 1.6rem Fraunces,serif;color:var(--rose)}
+.steps h3{margin:0 0 .2rem}.steps p{margin:0;color:var(--muted)}
+.note{background:var(--rose-soft);border-radius:14px;padding:1rem 1.2rem;margin-top:1.5rem;max-width:62ch}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin:.7rem 0;max-width:760px}
+summary{cursor:pointer;padding:1rem 1.2rem;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::after{content:"+";color:var(--rose);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding:0 1.2rem;margin:0 0 1rem;color:var(--muted)}
+.tag{display:inline-block;font-size:.8rem;font-weight:700;padding:.1rem .6rem;border-radius:99px;margin-right:.5rem;background:var(--rose-soft);color:var(--rose)}
+.tag.ok{background:#d9f0da;color:#1e5a43}
+.pledge{background:var(--surface);border:2px dashed var(--green);border-radius:20px;padding:1.5rem;margin-top:2rem;max-width:620px}
+.pledge .count{font:700 3rem Fraunces,serif;color:var(--rose);line-height:1}
+.pledge ul{padding-left:1.2rem}
+.pledge label{display:flex;gap:.6rem;align-items:flex-start;margin:.5rem 0;cursor:pointer}
+.pledge input{accent-color:var(--rose);width:1.2rem;height:1.2rem;margin-top:.3rem}
+.events{display:grid;gap:.8rem;margin-top:1rem}
+.ev{display:flex;gap:1rem;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:.9rem 1.1rem}
+.ev .d{min-width:5.5rem;text-align:center;font-weight:700;color:var(--green);border-right:2px solid var(--leaf);padding-right:1rem}
+.qo{display:block;width:100%;text-align:left;margin:.5rem 0;padding:.75rem 1rem;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:500 1rem Figtree,sans-serif;cursor:pointer}.qo:hover:not(:disabled){border-color:var(--rose)}.qo.ok{border-color:var(--green);background:#d9f0da;color:#1e5a43}.qo.no{border-color:var(--rose);background:var(--rose-soft);color:var(--ink)}.qmeta{color:var(--muted);font-weight:700;font-size:.9rem}
+footer{border-top:2px solid var(--green);padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.hero svg{max-width:220px;order:-1}.btn.alt{margin:.5rem 0 0}}
+@media (prefers-reduced-motion:no-preference){.ribbon-leaf{transform-origin:170px 250px;animation:sway 5s ease-in-out infinite alternate}}
+@keyframes sway{to{transform:rotate(4deg)}}
+</style>
+</head>
+<body>
+<header>
+ <div class="bar">
+  <a class="brand" href="#/" aria-label="Accueil October Rose"><svg width="26" height="26" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="#1e5a43" stroke-width="3"/><circle cx="20" cy="20" r="9" fill="#c2185b"/></svg><span><b>3Zero</b> <i>October Rose</i></span></a>
+  <nav aria-label="Navigation principale">
+   <a href="#/">Accueil</a><a href="#/comprendre">Comprendre</a><a href="#/depistage">Signes et dépistage</a><a href="#/quiz">Pink Quiz</a><a href="#/ressources">Ressources</a>
+  </nav>
+ </div>
+</header>
+
+<main class="wrap">
+<!-- ACCUEIL -->
+<section class="view" id="v-home" aria-labelledby="t-home">
+ <div class="hero">
+  <div>
+   <h1 id="t-home">Octobre se met en <em>rose</em>. Le campus, lui, reste vert.</h1>
+   <p class="lead">Bienvenue sur l’espace October Rose. À 3Zero Campus INTeK, nous prenons soin de la planète et de ceux qui l’habitent. Ce mois-ci, nous parlons du cancer du sein : le comprendre, le repérer tôt, en parler sans tabou.</p>
+   <a class="btn" href="#/comprendre">Découvrir la campagne</a>
+  </div>
+  <svg viewBox="0 0 340 340" role="img" aria-label="Ruban rose dont la boucle se prolonge en feuille verte">
+   <path d="M170 40c-52 0-92 40-92 88 0 40 26 66 52 100l40 70 40-70c26-34 52-60 52-100 0-48-40-88-92-88z" fill="none"/>
+   <path d="M170 60c-40 0-72 30-72 68 0 70 72 100 72 100s72-30 72-100c0-38-32-68-72-68zm0 0" fill="#c2185b" opacity=".12"/>
+   <path d="M170 250 118 100c-10-30 4-52 30-58 20-5 34 6 22 28-12 24-4 60 24 110z" fill="#c2185b"/>
+   <path d="M170 250 222 100c10-30-4-52-30-58-20-5-34 6-22 28 12 24 4 60-24 110z" fill="#e0457f"/>
+   <g class="ribbon-leaf"><path d="M170 250c-10 30-12 56-6 76 24-8 46-26 54-54 6-22-8-34-22-34-12 0-22 4-26 12z" fill="#1e5a43"/><path d="M170 252c8 22 18 40 36 58" stroke="#8cc98f" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+  </svg>
+ </div>
+ <div class="band"><div><p>Détecté tôt, le cancer du sein se soigne dans la grande majorité des cas. Le premier geste de prévention, c’est de s’y intéresser.</p></div></div>
+ <div class="grid">
+  <a class="card" href="#/comprendre" style="text-decoration:none"><h3>Comprendre</h3><p>Définition, facteurs de risque et informations essentielles.</p></a>
+  <a class="card g" href="#/depistage" style="text-decoration:none"><h3>Signes et dépistage</h3><p>Les changements à surveiller et quand consulter.</p></a>
+  <a class="card" href="#/quiz" style="text-decoration:none"><h3>Pink Quiz</h3><p>Six questions pour tester ce que vous savez.</p></a>
+  <a class="card g" href="#/ressources" style="text-decoration:none"><h3>Ressources et contacts</h3><p>Sources médicales fiables et contacts utiles.</p></a>
+ </div>
+</section>
+
+<!-- COMPRENDRE -->
+<section class="view" id="v-comp" aria-labelledby="t-comp">
+ <h2 id="t-comp">Comprendre le cancer du sein</h2>
+ <p class="lead">Des cellules du sein se multiplient de façon anormale et forment une tumeur. C’est le cancer le plus fréquent chez la femme dans le monde. Il touche aussi, plus rarement, des hommes.</p>
+ <div class="grid">
+  <div class="card"><h3>Facteurs de risque</h3><p>L’âge, des antécédents familiaux, certaines mutations génétiques, l’alcool, le tabac, le surpoids et le manque d’activité physique. Avoir un facteur de risque ne signifie pas tomber malade, et ne pas en avoir ne protège pas à 100 %.</p></div>
+  <div class="card g"><h3>Signes qui doivent faire consulter</h3><p>Une boule ou un épaississement, un changement de taille ou de forme, une peau qui se creuse ou ressemble à une peau d’orange, un mamelon rétracté, un écoulement inhabituel, une rougeur persistante.</p></div>
+  <div class="card"><h3>Ce que vous pouvez faire</h3><p>Bouger régulièrement, limiter l’alcool, ne pas fumer, connaître vos seins et passer les examens recommandés pour votre âge et vos antécédents.</p></div>
+ </div>
+ <div class="note"><strong>Un symptôme n’est pas un diagnostic.</strong> La plupart des boules au sein sont bénignes. Seul un professionnel de santé peut le confirmer : en cas de doute, consultez sans attendre.</div>
+ <h3 style="margin-top:2.5rem">Idées reçues</h3>
+ <details><summary>« Seules les femmes âgées sont concernées. »</summary><p><span class="tag">Faux</span>Le risque augmente avec l’âge, mais des femmes jeunes peuvent aussi être touchées. Connaître ses seins est utile à tout âge.</p></details>
+ <details><summary>« Sans antécédents familiaux, je ne risque rien. »</summary><p><span class="tag">Faux</span>La majorité des cancers du sein surviennent chez des femmes sans antécédents familiaux marquants.</p></details>
+ <details><summary>« Une boule au sein, c’est forcément un cancer. »</summary><p><span class="tag">Faux</span>Beaucoup de boules sont bénignes (kystes, fibroadénomes). Mais seul un examen peut le dire : il faut consulter.</p></details>
+ <details><summary>« Les hommes ne peuvent pas avoir de cancer du sein. »</summary><p><span class="tag">Faux</span>C’est rare, mais cela existe. Toute anomalie doit être montrée à un médecin, quel que soit le sexe.</p></details>
+ <details><summary>« Le déodorant ou le soutien-gorge provoquent le cancer du sein. »</summary><p><span class="tag">Faux</span>Aucune étude solide n’a établi ce lien.</p></details>
+ <details><summary>« Si je n’ai pas mal, tout va bien. »</summary><p><span class="tag">Faux</span>Un cancer du sein débutant est souvent indolore. C’est pourquoi le suivi régulier compte.</p></details>
+ <details><summary>« Le dépistage précoce améliore les chances de guérison. »</summary><p><span class="tag ok">Vrai</span>Plus la maladie est détectée tôt, plus les traitements sont efficaces et souvent moins lourds.</p></details>
+ <details><summary>« Le mode de vie peut réduire une partie du risque. »</summary><p><span class="tag ok">Vrai</span>Activité physique, alimentation équilibrée, peu d’alcool et absence de tabac aident à réduire le risque.</p></details>
+</section>
+
+<!-- DEPISTAGE -->
+<section class="view" id="v-dep" aria-labelledby="t-dep">
+ <h2 id="t-dep">Signes d’alerte et dépistage</h2>
+ <p class="lead">Repérer tôt change tout. Voici ce qu’il faut surveiller, quand consulter et comment se dépister.</p>
+ <div class="grid">
+  <div class="card"><h3>Changements à surveiller</h3><p>Une boule ou un épaississement nouveau, un sein dont la taille ou la forme change, une peau qui se creuse ou ressemble à une peau d’orange, un mamelon rétracté, un écoulement inhabituel, une rougeur qui persiste.</p></div>
+  <div class="card g"><h3>Quand consulter</h3><p>Dès qu’un changement apparaît et dure plus de quelques semaines, sans attendre le prochain contrôle. Consultez aussi si vous avez des antécédents familiaux et ne savez pas quand commencer le suivi.</p></div>
+  <div class="card"><h3>Le dépistage</h3><p>Il repose sur l’examen clinique par un professionnel et, selon l’âge et les antécédents, sur la mammographie et l’échographie. Votre médecin vous indiquera le bon rythme pour vous.</p></div>
+ </div>
+ <h3 style="margin-top:2.5rem">L’auto-examen en 4 gestes</h3>
+ <ol class="steps">
+  <li><span class="n">1</span><div><h3>Choisir le bon moment</h3><p>Quelques jours après la fin des règles. Après la ménopause, une date fixe chaque mois.</p></div></li>
+  <li><span class="n">2</span><div><h3>Observer devant un miroir</h3><p>Bras le long du corps, puis levés : forme, taille, peau, mamelon.</p></div></li>
+  <li><span class="n">3</span><div><h3>Palper avec la pulpe des doigts</h3><p>Par petits cercles, du mamelon vers l’extérieur, sans oublier le creux de l’aisselle.</p></div></li>
+  <li><span class="n">4</span><div><h3>Noter et agir</h3><p>Un changement qui dure ? Prenez rendez-vous avec un médecin ou une sage-femme.</p></div></li>
+ </ol>
+ <div class="note"><strong>L’auto-examen complète le suivi médical, il ne le remplace pas.</strong></div>
+</section>
+
+<!-- QUIZ -->
+<section class="view" id="v-quiz" aria-labelledby="t-quiz">
+ <h2 id="t-quiz">Pink Quiz</h2>
+ <p class="lead">Six questions, une explication après chaque réponse.</p>
+ <div class="pledge" id="quiz" aria-live="polite"></div>
+</section>
+
+<!-- RESSOURCES -->
+<section class="view" id="v-res" aria-labelledby="t-res">
+ <h2 id="t-res">Ressources et contacts</h2>
+ <p class="lead">Des sources médicales reconnues pour aller plus loin.</p>
+ <div class="grid">
+  <a class="card" href="https://www.who.int/news-room/fact-sheets/detail/breast-cancer" target="_blank" rel="noopener"><h3>Organisation mondiale de la santé</h3><p>Fiche d’information sur le cancer du sein : chiffres, prévention, détection.</p></a>
+  <a class="card g" href="https://www.santetunisie.rns.tn" target="_blank" rel="noopener"><h3>Ministère de la Santé tunisien</h3><p>Portail officiel : structures de santé et programmes nationaux.</p></a>
+  <a class="card" href="https://www.e-cancer.fr" target="_blank" rel="noopener"><h3>Institut national du cancer (France)</h3><p>Informations validées sur les cancers, en français.</p></a>
+ </div>
+ <h3 style="margin-top:2.5rem">Contacts</h3>
+ <div class="events">
+  <div class="ev"><div class="d">190</div><div><strong>SAMU (urgence médicale)</strong><br><span style="color:var(--muted)">Numéro d’urgence national.</span></div></div>
+  <div class="ev"><div class="d">À ajouter</div><div><strong>Infirmerie ou référent santé du campus</strong><br><span style="color:var(--muted)">Nom, téléphone et horaires à confirmer par l’équipe.</span></div></div>
+  <div class="ev"><div class="d">À ajouter</div><div><strong>Centre de dépistage le plus proche</strong><br><span style="color:var(--muted)">Adresse et téléphone à vérifier auprès de la structure avant publication.</span></div></div>
+ </div>
+ <div class="note">Les contacts locaux doivent être vérifiés avant d’être publiés. Ce site informe et ne remplace pas un avis médical.</div>
+</section>
+</main>
+
+<footer><div class="wrap">
+ <div><strong>3Zero Campus INTeK</strong><br>October Rose : sensibilisation au cancer du sein</div>
+ <div style="max-width:34ch">Ce site informe et ne remplace pas un avis médical. En cas de doute, consultez un professionnel de santé.</div>
+</div></footer>
+
+<script>
+(function(){
+ var routes={"":"v-home","/":"v-home","/comprendre":"v-comp","/depistage":"v-dep","/quiz":"v-quiz","/ressources":"v-res"};
+ function show(){
+  var h=(location.hash||"#/").slice(1),id=routes[h]||"v-home";
+  document.querySelectorAll(".view").forEach(function(v){v.classList.toggle("on",v.id===id)});
+  document.querySelectorAll("nav a").forEach(function(a){
+   if(a.getAttribute("href")==="#"+(h||"/"))a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");
+  });
+  window.scrollTo(0,0);
+ }
+ window.addEventListener("hashchange",show);show();
+ var Q=[
+ ["Quand faire son auto-examen des seins ?",["Juste avant les règles","Quelques jours après la fin des règles","Uniquement après 60 ans"],1,"Les seins sont alors moins sensibles. Après la ménopause, choisissez une date fixe chaque mois."],
+ ["Une boule au sein est forcément un cancer.",["Vrai","Faux, mais il faut consulter"],1,"Beaucoup de boules sont bénignes, mais seul un examen médical peut le confirmer."],
+ ["Lequel de ces signes doit faire consulter ?",["Une peau qui se creuse ou ressemble à une peau d’orange","Une fatigue après le sport","Un sein un peu plus lourd avant les règles"],0,"Un changement de la peau est un signe d’alerte à faire examiner."],
+ ["Les hommes peuvent-ils avoir un cancer du sein ?",["Non, jamais","Oui, c’est rare mais possible","Seulement après 80 ans"],1,"Toute anomalie du sein doit être montrée à un médecin, quel que soit le sexe."],
+ ["Pourquoi dépister tôt ?",["Les traitements sont plus efficaces et souvent moins lourds","Cela évite tout risque de maladie","Cela n’a pas d’intérêt sans douleur"],0,"Un cancer débutant est souvent indolore : le suivi régulier permet de le trouver tôt."],
+ ["Un changement dure depuis plusieurs semaines. Que faire ?",["Attendre qu’il disparaisse","En parler à un médecin ou une sage-femme","Chercher la réponse sur les forums"],1,"Ne pas attendre : prenez rendez-vous avec un professionnel de santé."]];
+ var box=document.getElementById("quiz"),i=0,score=0;
+ function esc(t){return t.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+ function ask(){
+  if(i>=Q.length){
+   box.innerHTML='<p class="qmeta">Terminé</p><div class="count">'+score+' / '+Q.length+'</div><p>'+(score>=5?"Bravo, vous êtes bien informé(e). Partagez ce que vous avez appris.":score>=3?"Bon début. Relisez les pages Comprendre et Signes et dépistage.":"Bonne occasion d’apprendre : parcourez les pages du site puis réessayez.")+'</p><button class="btn" id="rs">Recommencer</button>';
+   document.getElementById("rs").onclick=function(){i=0;score=0;ask()};return;}
+  var q=Q[i];
+  box.innerHTML='<p class="qmeta">Question '+(i+1)+' sur '+Q.length+'</p><h3>'+esc(q[0])+'</h3>'+q[1].map(function(o,k){return '<button class="qo" data-k="'+k+'">'+esc(o)+'</button>'}).join('')+'<div id="fb"></div>';
+  box.querySelectorAll(".qo").forEach(function(b){b.onclick=function(){
+   var k=+b.dataset.k,all=box.querySelectorAll(".qo");
+   all.forEach(function(x){x.disabled=true});
+   all[q[2]].classList.add("ok");
+   if(k===q[2])score++;else b.classList.add("no");
+   document.getElementById("fb").innerHTML='<p><strong>'+(k===q[2]?"Bonne réponse. ":"Pas tout à fait. ")+'</strong>'+esc(q[3])+'</p><button class="btn" id="nx">'+(i===Q.length-1?"Voir mon score":"Question suivante")+'</button>';
+   var n=document.getElementById("nx");n.focus();n.onclick=function(){i++;ask()};
+  }});
+ }
+ ask();
+})();
+</script>
+</body>
+</html>
